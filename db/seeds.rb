@@ -39,10 +39,11 @@ answers = Answer.create([
 
 users = User.create([
   {name: 'John Doe'},
-  {name: 'James Bond'}
+  {name: 'James Bond'},
+  {name: 'Admin'}
 ])
 
-PassedTest.create([
+TestsUser.create([
   {user: users[0], test: tests[0]},
   {user: users[0], test: tests[1]},
   {user: users[0], test: tests[2]},
@@ -51,4 +52,9 @@ PassedTest.create([
   {user: users[1], test: tests[0]},
   {user: users[1], test: tests[2]},
   {user: users[1], test: tests[3]},
+  {user: users[2], test: tests[0], owner: true},
+  {user: users[2], test: tests[1], owner: true},
+  {user: users[2], test: tests[2], owner: true},
+  {user: users[2], test: tests[3], owner: true},
+  {user: users[2], test: tests[4], owner: true},
 ])
