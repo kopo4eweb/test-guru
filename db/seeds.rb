@@ -13,12 +13,20 @@ categories = Category.create([
   {title: 'JavaScript'}
   ])
 
+users = User.create([
+  {name: 'John Doe'},
+  {name: 'James Bond'},
+  {name: 'Admin'}
+  ])
+
+admin = users[2]
+
 tests = Test.create([
-  {title: 'Основы HTML', level: 1, category: categories[0]},
-  {title: 'Основы Ruby', level: 1, category: categories[1]},
-  {title: 'Продвинутый Ruby', level: 2, category: categories[1]},
-  {title: 'Основы Rails', level: 1, category: categories[2]},
-  {title: 'Основы JS', level: 1, category: categories[3]},
+  {title: 'Основы HTML', level: 1, category: categories[0], user: admin},
+  {title: 'Основы Ruby', level: 1, category: categories[1], user: admin},
+  {title: 'Продвинутый Ruby', level: 2, category: categories[1], user: admin},
+  {title: 'Основы Rails', level: 1, category: categories[2], user: admin},
+  {title: 'Основы JS', level: 1, category: categories[3], user: admin},
   ])
 
 questions = Question.create([
@@ -37,12 +45,7 @@ answers = Answer.create([
   {title: 'Перенос строки', correct: true, question: questions[1]},
 ])
 
-users = User.create([
-  {name: 'John Doe'},
-  {name: 'James Bond'}
-])
-
-PassedTest.create([
+TestsUser.create([
   {user: users[0], test: tests[0]},
   {user: users[0], test: tests[1]},
   {user: users[0], test: tests[2]},
@@ -50,5 +53,5 @@ PassedTest.create([
   {user: users[0], test: tests[4]},
   {user: users[1], test: tests[0]},
   {user: users[1], test: tests[2]},
-  {user: users[1], test: tests[3]},
+  {user: users[1], test: tests[3]}
 ])
