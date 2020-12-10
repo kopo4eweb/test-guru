@@ -22,12 +22,12 @@ users = User.create([
 admin = users[2]
 
 tests = Test.create([
-  {title: 'Основы HTML', level: 0, category: categories[0], user: admin},
-  {title: 'Основы HTML 5', level: 0, category: categories[0], user: admin},
-  {title: 'Основы Ruby', level: 2, category: categories[1], user: admin},
-  {title: 'Продвинутый Ruby', level: 3, category: categories[1], user: admin},
-  {title: 'Основы Rails', level: 7, category: categories[2], user: admin},
-  {title: 'Основы JS', level: 5, category: categories[3], user: admin},
+  {title: 'Основы HTML', level: 0, category: categories[0], author: admin},
+  {title: 'Основы HTML 5', level: 0, category: categories[0], author: admin},
+  {title: 'Основы Ruby', level: 2, category: categories[1], author: admin},
+  {title: 'Продвинутый Ruby', level: 3, category: categories[1], author: admin},
+  {title: 'Основы Rails', level: 7, category: categories[2], author: admin},
+  {title: 'Основы JS', level: 5, category: categories[3], author: admin},
   ])
 
 questions = Question.create([
