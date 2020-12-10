@@ -14,19 +14,20 @@ categories = Category.create([
   ])
 
 users = User.create([
-  {name: 'John Doe'},
-  {name: 'James Bond'},
-  {name: 'Admin'}
+  {name: 'John Doe', email: 'john_doe@mail.com'},
+  {name: 'James Bond', email: 'james_007@mail.com'},
+  {name: 'Admin', email: 'admin@testguru.com'}
   ])
 
 admin = users[2]
 
 tests = Test.create([
-  {title: 'Основы HTML', level: 1, category: categories[0], user: admin},
-  {title: 'Основы Ruby', level: 1, category: categories[1], user: admin},
-  {title: 'Продвинутый Ruby', level: 2, category: categories[1], user: admin},
-  {title: 'Основы Rails', level: 1, category: categories[2], user: admin},
-  {title: 'Основы JS', level: 1, category: categories[3], user: admin},
+  {title: 'Основы HTML', level: 0, category: categories[0], author: admin},
+  {title: 'Основы HTML 5', level: 0, category: categories[0], author: admin},
+  {title: 'Основы Ruby', level: 2, category: categories[1], author: admin},
+  {title: 'Продвинутый Ruby', level: 3, category: categories[1], author: admin},
+  {title: 'Основы Rails', level: 7, category: categories[2], author: admin},
+  {title: 'Основы JS', level: 5, category: categories[3], author: admin},
   ])
 
 questions = Question.create([
