@@ -16,17 +16,19 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = @test.questions.create(question_params)
+    question = @test.questions.new(question_params)
 
-    render plain: question.inspect
+    if question.save
+      render plain: question.inspect
+    else
+      render plain: question.errors.full_messages
+    end
   end
 
   def destroy
-    test = @question.test
-
     @question.destroy
     
-    redirect_to test_questions_path(test)
+    redirect_to test_questions_path(@question.test)
   end
 
   private
