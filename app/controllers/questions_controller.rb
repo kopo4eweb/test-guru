@@ -1,34 +1,45 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, :find_question
+  before_action :find_test
+  before_action :find_question, except: [:index, :create]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_record_not_found
 
   def index
-    render plain: @test.questions.pluck(:body)
+    @questions = @test.questions
   end
 
   def show
-    render plain: @question.body
   end
 
   def new
-    render :new, layout: false
+    @question = Question.new
   end
 
   def create
-    question = @test.questions.new(question_params)
+    @question = @test.questions.new(question_params)
 
-    if question.save
-      render plain: question.inspect
+    if @question.save
+      redirect_to @question
     else
-      render plain: question.errors.full_messages
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
     end
   end
 
   def destroy
     @question.destroy
     
-    redirect_to test_questions_path(@question.test)
+    redirect_to test_path(@question.test)
   end
 
   private
