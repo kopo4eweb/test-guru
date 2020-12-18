@@ -1,11 +1,12 @@
 class TestPassage < ApplicationRecord
+  PERCENT_SUCCESS = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_next_question
-  before_update :before_update_passed_questions
 
   def completed?
     current_question.nil?
@@ -21,6 +22,18 @@ class TestPassage < ApplicationRecord
 
   def percent_success_answer
     ((correct_questions.to_f / test.questions.count.to_f) * 100).round(1) if correct_questions.positive?
+  end
+
+  def success?
+    percent_success_answer >= PERCENT_SUCCESS
+  end
+
+  def total_questions
+    test.questions.count
+  end
+
+  def passed_questions
+    test.questions.order(:id).where('id < ?', current_question.id).count + 1
   end
 
   private
@@ -39,9 +52,5 @@ class TestPassage < ApplicationRecord
 
   def before_update_next_question
     self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
-  end
-
-  def before_update_passed_questions
-    self.passed_questions += 1 unless completed?
   end
 end
