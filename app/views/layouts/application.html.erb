@@ -10,17 +10,34 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-      <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru</p>
-    <% end %>
+    
+      <nav class="nav">
+        <div class="container">
+          <%= link_to 'TestGuru', root_path, class: 'nav__logo' %>
 
-    <%= yield %>
+          <ul class="nav__list">
+            <% if logged_in? %>
+              <li class="nav__item">Welcome, <b><%= current_user.name %></b> Guru</li>
+              <li class="nav__item"><%= link_to 'Logout', logout_path %></li>
+            <% else %>
+              <li class="nav__item"><%= link_to 'Login', login_path %></li>
+              <li class="nav__item"><%= link_to 'Signup', signup_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container">
+        <%= yield %>
+      </div>
 
     <footer>
       <hr>
-      <p>Платформа для создания и прохождения тестов.</p>
-      <p>Учебный проект в онлайн-школе <a href='https://thinknetica.com/' target='blank'>Thinknetica</a></p>
-      <p><%= year %>, Nikolenko Artem, <%= github_url('kopo4eweb', 'test-guru') %></p>
-    </footer>
+      <div class="container">
+        <p>Платформа для создания и прохождения тестов.</p>
+        <p>Учебный проект в онлайн-школе <a href='https://thinknetica.com/' target='blank'>Thinknetica</a></p>
+        <p><%= year %>, Nikolenko Artem, <%= github_url('kopo4eweb', 'test-guru') %></p>
+      </div>
+    </footer>    
   </body>
 </html>
