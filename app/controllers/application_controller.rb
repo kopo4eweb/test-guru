@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
-      save_page_destination
+      cookies[:from_page] = request.path
       redirect_to login_path, alert: 'Are you a Guru? Verity your Email and Password please'
     end
   end
@@ -26,14 +26,5 @@ class ApplicationController < ActionController::Base
 
   def logout_user
     session[:user_id] = nil
-  end
-
-  def save_page_destination
-    cookies[:url] = request.path
-  end
-
-  def go_over_page_destination(controller_path)
-    redirect_to cookies[:url] ? cookies[:url] : controller_path
-    cookies[:url] = nil
   end
 end

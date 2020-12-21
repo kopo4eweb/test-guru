@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save
       authenticate_user(@user)
-      go_over_page_destination(tests_path)
+      redirect_to cookies.delete(:from_page) || root_path
     else
       render :new
     end
