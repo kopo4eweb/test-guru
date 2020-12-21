@@ -4,7 +4,10 @@ class User < ApplicationRecord
 
   has_many :created_tests, class_name: 'Test'
 
-  validates :name, :email, presence: true
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true, format: { with: /\A(.+)@(.+)\z/, message: "not valid" }
+
+  has_secure_password
 
   def find_tests_by_level(level)
     tests.where(level: level)

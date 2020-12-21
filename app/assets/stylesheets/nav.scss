@@ -1,0 +1,27 @@
+.nav {
+  background-color: rgb(164, 227, 247);
+
+  .container {
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  &__logo {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  &__list {
+    margin: 0;
+    margin-left: auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-left: 15px;
+  }
+}
