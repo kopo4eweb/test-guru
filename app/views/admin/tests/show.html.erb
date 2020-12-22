@@ -2,11 +2,10 @@
 <p><b>Level</b>: <%= test_level(@test) %></p>
 
 <h2>Questions:</h2>
-<%= link_to 'Create question', new_test_question_path(@test) %>
+<%= link_to 'Create question', new_admin_test_question_path(@test) %>
 
 <ol>
-  <%#= render @test.questions %>
-  <%= render partial: 'questions/question', collection: @test.questions %>
+  <%= render @test.questions %>
 </ol>
 
 <%= link_to 'Edit', edit_admin_test_path(@test) %> | 
