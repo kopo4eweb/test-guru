@@ -8,11 +8,13 @@ module ApplicationHelper
   end
 
   def output_flash
+    return if flash.nil?
+
     messages = ''
     
     flash.each do |key, message|
       messages += content_tag :p, message, class: ['flash', key]
-    end unless flash.nil?
+    end
 
     messages.html_safe
   end
