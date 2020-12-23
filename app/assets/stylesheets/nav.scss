@@ -1,6 +1,15 @@
 .nav {
   background-color: rgb(164, 227, 247);
 
+  &.admin {
+    color: #fff;
+    background-color: rgb(32, 32, 32);
+
+    a {
+      color: rgb(179, 179, 233);
+    }
+  }
+
   .container {
     display: flex;
     padding-top: 15px;

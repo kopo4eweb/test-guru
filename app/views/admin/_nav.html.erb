@@ -1,0 +1,12 @@
+<nav class="nav admin">
+  <div class="container">
+    <%= link_to 'Admin TestGuru', admin_tests_path, class: 'nav__logo' %>
+
+    <ul class="nav__list">
+      <% if user_signed_in? %>
+        <li class="nav__item">Welcome, <b><%= current_user.email %></b> Guru</li>
+        <li class="nav__item"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

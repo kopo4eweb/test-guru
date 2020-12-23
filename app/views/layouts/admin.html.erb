@@ -11,21 +11,7 @@
 
   <body>
     
-      <nav class="nav">
-        <div class="container">
-          <%= link_to 'TestGuru', root_path, class: 'nav__logo' %>
-
-          <ul class="nav__list">
-            <% if user_signed_in? %>
-              <li class="nav__item">Welcome, <b><%= current_user.email %></b> Guru</li>
-              <li class="nav__item"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-            <% else %>
-              <li class="nav__item"><%= link_to 'Login', new_user_session_path %></li>
-              <li class="nav__item"><%= link_to 'Signup', new_user_registration_path %></li>
-            <% end %>
-          </ul>
-        </div>
-      </nav>
+      <%= render 'admin/nav' %>
 
       <div class="container">
         <%= output_flash %>

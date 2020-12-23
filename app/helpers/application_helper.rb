@@ -7,9 +7,15 @@ module ApplicationHelper
     link_to repo, "https://github.com/#{author}/#{repo}", target: "_blank"
   end
 
-  def output_flash(type)
-    if flash[type]
-      content_tag :p, flash[type], class: 'flash alert'
+  def output_flash
+    return if flash.nil?
+
+    messages = ''
+    
+    flash.each do |key, message|
+      messages += content_tag :p, message, class: ['flash', key]
     end
+
+    messages.html_safe
   end
 end
