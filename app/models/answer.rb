@@ -10,6 +10,6 @@ class Answer < ApplicationRecord
   validate :validate_max_answers, on: :create
 
   def validate_max_answers
-    errors.add(:question, "maximum answers on question #{MAX_ANSWERS}") if question.answers.count >= MAX_ANSWERS
+    errors.add(:base, I18n.t('custom_valid.max_answers', max: MAX_ANSWERS)) if question.answers.count >= MAX_ANSWERS
   end
 end

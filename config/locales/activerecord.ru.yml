@@ -1,0 +1,38 @@
+ru:
+  activerecord:
+    models:
+      category: "Категория"
+      test: "Тест"
+      question: "Вопрос"
+      answer: "Ответ"
+      user: "Пользователь"
+      admin: "Администратор"
+
+    attributes:
+      category:
+        title: "Категория"
+      test:
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+      question:
+        body: "Вопрос"
+      answer:
+        title: "Ответ"
+        correct: "Правильный"
+      user:
+        email: "Электронная почта"
+        password: "Пароль"
+        password_confirmation: "Подтвердить пароль"
+        current_password: "Текущий пароль"
+        remember_me: "Запомнить меня"
+        first_name: "Имя"
+        last_name: "Фамилия"
+
+    errors:
+      messages:
+        blank: "не может быть пустым"
+        required: "обязательна для выбора"
+
+  custom_valid:
+    max_answers: "максимальное количество ответов на вопрос %{max}"

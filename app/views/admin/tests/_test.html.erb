@@ -3,12 +3,12 @@
   <td><%= test.title %></td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.size %></td>
-  <td><%= link_to 'Show', admin_test_path(test) %></td>
-  <td><%= link_to 'Edit', edit_admin_test_path(test) %></td>
+  <td><%= link_to t('.link_show'), admin_test_path(test) %></td>
+  <td><%= link_to t('.link_edit'), edit_admin_test_path(test) %></td>
   <td>
-    <%= link_to 'Delete', 
+    <%= link_to t('.link_delete'), 
       admin_test_path(test),
       method: 'delete',
-      data: { confirm: 'Are you sure?' } %>
+      data: { confirm: t('.confirm_delete') } %>
   </td>
 </tr>

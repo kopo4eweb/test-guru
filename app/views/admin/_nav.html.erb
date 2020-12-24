@@ -4,8 +4,8 @@
 
     <ul class="nav__list">
       <% if user_signed_in? %>
-        <li class="nav__item">Welcome, <b><%= current_user.email %></b> Guru</li>
-        <li class="nav__item"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <li class="nav__item"><%= t('nav.welcome', email: current_user.email).html_safe %></li>
+        <li class="nav__item"><%= link_to t('nav.logout'), destroy_user_session_path, method: :delete %></li>
       <% end %>
     </ul>
   </div>

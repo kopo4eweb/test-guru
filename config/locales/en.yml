@@ -1,33 +1,165 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  not_found_404: "404 Not Found"
+
+  hello: "Hello, %{name}!"
+
+  helpers:
+    select:
+      prompt: "Please select"
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+      question:
+        create: "Create Question"
+        update: "Update Question"
+      answer:
+        create: "Create Answer"
+        update: "Update Answer"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question:
+        body: "Question"
+      answer:
+        title: "Answer"
+        correct: "Valid"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected:"
+        other: "%{count} errors detected:"
+
+  helpers:
+    levels:
+      easy: "easy"
+      elementary: "elementary"
+      advanced: "advanced"
+      hard: "hard"
+      hero: "hero"
+    question:
+      create: "Create New <%{title}> Question"
+      edit: "Edit <%{title}> Question"
+
+  tests:
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      questions: "Questions"
+      actions: "Actions"
+    test:
+      button_start: "Start"
+
+  test_passages:
+    show:
+      header: "Pass the %{title} Test"
+      button_next: "Next"
+    result:
+      header: "The %{title} Test was completed!"
+      success: "Test passed successfully with"
+      failed: "Test failed with"
+      button_back: "Back to tests"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just complrted the TestGuru test!"
+
+  admin:
+
+    base:
+      admin_required:
+        alert: "You are not authorized to view this page."
+
+    tests:
+      new:
+        header: "Create new Test"
+        link_back: "Back"
+      create:
+        success: "Test was succeseefully created."
+      edit:
+        header: "Edit Test"
+        link_back: "Back"
+      update:
+        success: "Test was succeseefully updated."
+      show:
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        link_create: "Create question"
+        link_edit: "Edit"
+        link_back: "Back"
+      destroy:
+        success: "Test %{title} was succeseefully deleted."
+      index:
+        header: "Tricky Tests"
+        title: "Title"
+        level: "Level"
+        questions: "Questions"
+        actions: "Actions"
+        link_add: "Add test"
+      test:
+        link_show: "Show"
+        link_edit: "Edit"
+        link_delete: "Delete"
+        confirm_delete: "Are you sure?"
+
+    questions:
+      new:
+        link_back: "Back"
+      create:
+        success: "Question was succeseefully created."
+      edit:
+        link_back: "Back"
+      update:
+        success: "Question was succeseefully updated."
+      show:
+        header: "%{title} Question"
+        answers: "Answers"
+        link_create: "Create answer"
+        link_back: "Back"
+      destroy:
+        success: "Question %{body} was succeseefully deleted."
+      question:
+        link_show: "Show"
+        link_edit: "Edit"
+        link_delete: "Delete"
+        confirm_delete: "Are you sure?"
+
+    answers:
+      new:
+        header: "New answer"
+        link_back: "Back"
+      create:
+        success: "Answer was succeseefully created."
+      edit:
+        header: "Edit answer"
+        link_back: "Back"
+      update:
+        success: "Answer was succeseefully updated."
+      show:
+        header: "Question"
+        answer: "Answer"
+        correct: "Correct"
+        link_back: "Back"
+      destroy:
+        success: "Answer %{title} was succeseefully deleted."
+      answer:
+        link_show: "Show"
+        link_edit: "Edit"
+        link_delete: "Delete"
+        confirm_delete: "Are you sure?"
+
+  nav:
+    welcome: "Welcome, <b>%{email}</b> Guru"
+    login: "Login"
+    logout: "Logout"
+    signup: "Signup"
+
+  footer:
+    descr: "A platform for creating and passing tests."
+    school: "Educational project in the online school %{link}"
+    author: "%{year}, Nikolenko Artem, %{link}"

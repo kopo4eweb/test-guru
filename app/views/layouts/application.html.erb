@@ -17,11 +17,11 @@
 
           <ul class="nav__list">
             <% if user_signed_in? %>
-              <li class="nav__item">Welcome, <b><%= current_user.email %></b> Guru</li>
-              <li class="nav__item"><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+              <li class="nav__item"><%= t('nav.welcome', email: current_user.email).html_safe %></li>
+              <li class="nav__item"><%= link_to t('nav.logout'), destroy_user_session_path, method: :delete %></li>
             <% else %>
-              <li class="nav__item"><%= link_to 'Login', new_user_session_path %></li>
-              <li class="nav__item"><%= link_to 'Signup', new_user_registration_path %></li>
+              <li class="nav__item"><%= link_to t('nav.login'), new_user_session_path %></li>
+              <li class="nav__item"><%= link_to t('nav.signup'), new_user_registration_path %></li>
             <% end %>
           </ul>
         </div>
@@ -36,9 +36,9 @@
     <footer>
       <hr>
       <div class="container">
-        <p>Платформа для создания и прохождения тестов.</p>
-        <p>Учебный проект в онлайн-школе <a href='https://thinknetica.com/' target='blank'>Thinknetica</a></p>
-        <p><%= year %>, Nikolenko Artem, <%= github_url('kopo4eweb', 'test-guru') %></p>
+        <p><%= t('footer.descr') %></p>
+        <p><%= t('footer.school', link: link_to('Thinknetica', 'https://thinknetica.com/', target: '_blank')).html_safe %></p>
+        <p><%= t('footer.author', year: year, link: github_url('kopo4eweb', 'test-guru')).html_safe %></p>
       </div>
     </footer>    
   </body>
