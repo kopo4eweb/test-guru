@@ -1,9 +1,9 @@
 module QuestionsHelper
   def question_header(question)
     if question.persisted?
-      "Edit <#{question.test.title}> Question"
+      I18n.t('.helpers.question.edit', title: question.test.title)
     else
-      "Create New <#{question.test.title}> Question"
+      I18n.t('.helpers.question.create', title: question.test.title)
     end
   end
 end

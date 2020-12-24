@@ -1,10 +1,6 @@
 class Admin::QuestionsController < Admin::BaseController
-  before_action :find_test, only: [:index, :create, :new]
+  before_action :find_test, only: [:create, :new]
   before_action :find_question, only: [:edit, :show, :update, :destroy]
-
-  def index
-    @questions = @test.questions
-  end
 
   def show
   end
@@ -17,7 +13,7 @@ class Admin::QuestionsController < Admin::BaseController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to admin_question_path(@question)
+      redirect_to admin_question_path(@question), notice: t('.success')
     else
       render :new
     end
@@ -28,16 +24,15 @@ class Admin::QuestionsController < Admin::BaseController
 
   def update
     if @question.update(question_params)
-      redirect_to admin_question_path(@question)
+      redirect_to admin_question_path(@question), notice: t('.success')
     else
       render :edit
     end
   end
 
   def destroy
-    @question.destroy
-    
-    redirect_to admin_test_path(@question.test)
+    @question.destroy    
+    redirect_to admin_test_path(@question.test), notice: t('.success', body: @question.body)
   end
 
   private

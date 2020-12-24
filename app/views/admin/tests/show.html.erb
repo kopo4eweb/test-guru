@@ -1,12 +1,12 @@
-<p><b>Test</b>: <%= @test.title %></p>
-<p><b>Level</b>: <%= test_level(@test) %></p>
+<p><b><%= t('.title') %></b>: <%= @test.title %></p>
+<p><b><%= t('.level') %></b>: <%= test_level(@test) %></p>
 
-<h2>Questions:</h2>
-<%= link_to 'Create question', new_admin_test_question_path(@test) %>
+<h2><%= t('.questions') %>:</h2>
+<%= link_to t('.link_create'), new_admin_test_question_path(@test) %>
 
 <ol>
   <%= render @test.questions %>
 </ol>
 
-<%= link_to 'Edit', edit_admin_test_path(@test) %> | 
-<%= link_to 'Back', admin_tests_path %>
+<%= link_to t('.link_edit'), edit_admin_test_path(@test) %> | 
+<%= link_to t('.link_back'), admin_tests_path %>
