@@ -14,7 +14,7 @@ en:
       test:
         title: "Title"
         level: "Level"
-        category: "Category"
+        category_id: "Category"
       question:
         body: "Question"
       answer:

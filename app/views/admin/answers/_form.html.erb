@@ -1,15 +1,20 @@
-<%= form_with model: [:admin, @question, @answer], local: true do |form| %>
-  <%= render 'shared/errors', resource: @answer %>
+<div class="card">
+  <div class="card-body">
+    <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
+      <%= render 'shared/errors', resource: @answer %>
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_area :title, rows: 5, cols: 70 %>
-  </p>
-  <p>
-    <%= form.label :correct %>:
-    <%= form.check_box :correct %>
-  </p>
-  <p>
-    <%= form.submit%>
-  </p>
-<% end %>
+      <div class="form-group">
+        <%= form.label :title %><br>
+        <%= form.text_area :title, rows: 5, cols: 70, class: 'form-control' %>
+      </div>
+
+      <div class="form-group form-check">
+        <%= form.check_box :correct, class: 'form-check-input' %>
+        <%= form.label :correct, class: 'form-check-label' %>
+      </div>
+
+      <%= form.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+

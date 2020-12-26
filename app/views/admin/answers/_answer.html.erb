@@ -1,9 +1,13 @@
-<li>
-  <%= answer.title %><br>
-  <%= link_to t('.link_show'), admin_answer_path(answer) %> |
-  <%= link_to t('.link_edit'), edit_admin_answer_path(answer) %> |
-  <%= link_to t('.link_delete'), 
-      admin_answer_path(answer),
-      method: 'delete',
-      data: { confirm: t('.confirm_delete') } %>
-</li>
+<tr scope="row">
+  <td><%= answer.title %></td>
+  <td><%= link_to t('.link_show'), admin_answer_path(answer), class: 'btn btn-outline-primary btn-sm', role: 'button' %></td>
+  <td><%= link_to t('.link_edit'), edit_admin_answer_path(answer), class: 'btn btn-outline-secondary btn-sm', role: 'button' %></td>
+  <td>
+    <%= link_to t('.link_delete'), 
+        admin_answer_path(answer),
+        method: 'delete',
+        data: { confirm: t('.confirm_delete') },
+        class: 'btn btn-outline-danger btn-sm',
+        role: 'button' %>
+  </td>
+</tr>

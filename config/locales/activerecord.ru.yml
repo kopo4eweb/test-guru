@@ -14,7 +14,7 @@ ru:
       test:
         title: "Название"
         level: "Уровень"
-        category: "Категория"
+        category_id: "Категория"
       question:
         body: "Вопрос"
       answer:

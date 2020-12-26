@@ -90,6 +90,7 @@ ru:
       show:
         title: "Название"
         level: "Уровень"
+        actions: "Действия"
         questions: "Вопросы"
         link_create: "Создать вопрос"
         link_edit: "Редактировать"
@@ -121,6 +122,8 @@ ru:
       show:
         header: "%{title} Вопрос"
         answers: "Ответы"
+        title: "Название"
+        actions: "Действия"
         link_create: "Создать ответ"
         link_back: "Назад"
       destroy:
@@ -157,6 +160,7 @@ ru:
 
   nav:
     welcome: "Приветствую, <b>%{email}</b> Guru"
+    profile: "Профиль"
     login: "Войти"
     logout: "Выйти"
     signup: "Регистрация"

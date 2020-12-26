@@ -88,6 +88,7 @@ en:
       show:
         title: "Title"
         level: "Level"
+        actions: "Actions"
         questions: "Questions"
         link_create: "Create question"
         link_edit: "Edit"
@@ -119,6 +120,8 @@ en:
       show:
         header: "%{title} Question"
         answers: "Answers"
+        title: "Title"
+        actions: "Actions"
         link_create: "Create answer"
         link_back: "Back"
       destroy:
@@ -155,6 +158,7 @@ en:
 
   nav:
     welcome: "Welcome, <b>%{email}</b> Guru"
+    profile: "Profile"
     login: "Login"
     logout: "Logout"
     signup: "Signup"
