@@ -9,8 +9,8 @@ module ApplicationHelper
     link_to repo, "https://github.com/#{author}/#{repo}", target: "_blank"
   end
 
-  def link_to_admin_palen(text_logo, css_class)
-    link_to text_logo, admin_tests_path, class: css_class if user_signed_in? && current_user.admin?
+  def link_to_admin_panel
+    link_to t('nav.admin'), admin_tests_path, class: 'btn btn-warning btn-sm' if user_signed_in? && current_user.admin?
   end
 
   def output_flash

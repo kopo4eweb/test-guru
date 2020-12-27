@@ -157,6 +157,7 @@ en:
         confirm_delete: "Are you sure?"
 
   nav:
+    admin: 'Admin panel'
     welcome: "Welcome, <b>%{email}</b> Guru"
     profile: "Profile"
     login: "Login"

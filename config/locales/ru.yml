@@ -159,6 +159,7 @@ ru:
         confirm_delete: "Вы уверены?"
 
   nav:
+    admin: 'Админка'
     welcome: "Приветствую, <b>%{email}</b> Guru"
     profile: "Профиль"
     login: "Войти"
