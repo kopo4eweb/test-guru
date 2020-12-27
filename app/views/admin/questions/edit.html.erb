@@ -1,5 +1,9 @@
-<h1><%= question_header(@question) %></h1>
+<div class="row justify-content-center">
+  <div class="col">
+    <h2 class='mb-4'><%= question_header(@question) %></h2>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
-<%= link_to t('.link_back'), admin_test_path(@question.test) %>
+    <%= link_to t('.link_back'), admin_test_path(@question.test), class: 'btn btn-secondary mt-4', role: 'button' %>
+  </div>
+</div>

@@ -1,16 +1,18 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<p><b><%= @test_passage.current_question.body %></b></p>
-
 <p><%= @test_passage.passed_questions %> \ <%= @test_passage.total_questions %></p>
+
+<p><b><%= @test_passage.current_question.body %></b></p>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :title, include_hidden: false do |b| %>
-    <p>
+    <div class="form-check">
       <%= b.check_box id: "answer_ids_#{b.object.id}" %>
       <%= b.label %>
-    </p>
+    </div>
   <% end %>
 
-  <p><%= form.submit t('.button_next') %></p>
+  <div class="mt-4">
+    <%= form.submit t('.button_next'), class: 'btn btn-outline-success' %>
+  </div>
 <% end %>

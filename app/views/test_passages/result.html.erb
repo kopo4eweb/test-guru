@@ -1,11 +1,19 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<p>
-<% if @test_passage.success? %>
-  <span class='test-success'><%= t('.success') %> <b><%= @test_passage.percent_success_answer %>%</b></span>
-<% else %>
-  <span class='test-fail'><%= t('.failed') %> <b><%= @test_passage.percent_success_answer %>%</b></span>
-<% end %>
-</p>
+<div class="mt-4">
+  <% if @test_passage.success? %>
+    <span class='test-success'><%= t('.success') %> <b><%= @test_passage.percent_success_answer %>%</b></span>
+    <div class="progress mt-2">
+      <div class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: <%= @test_passage.percent_success_answer %>%" aria-valuenow="<%= @test_passage.percent_success_answer %>" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  <% else %>
+    <span class='test-fail'><%= t('.failed') %> <b><%= @test_passage.percent_success_answer %>%</b></span>
+    <div class="progress mt-2">
+      <div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: <%= @test_passage.percent_success_answer %>%" aria-valuenow="<%= @test_passage.percent_success_answer %>" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+  <% end %>
+</div>
 
-<%= link_to t('.button_back'), tests_path %>
+<div class="mt-5">
+  <%= link_to t('.button_back'), tests_path, class: 'btn btn-primary', role: 'button' %>
+</div>

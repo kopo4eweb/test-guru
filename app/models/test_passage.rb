@@ -21,7 +21,11 @@ class TestPassage < ApplicationRecord
   end
 
   def percent_success_answer
-    ((correct_questions.to_f / test.questions.count.to_f) * 100).round(1) if correct_questions.positive?
+    if correct_questions.positive?
+      ((correct_questions.to_f / test.questions.count.to_f) * 100).round(1)
+    else
+      0
+    end
   end
 
   def success?
