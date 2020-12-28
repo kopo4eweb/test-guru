@@ -13,6 +13,7 @@
   <% end %>
 
   <div class="mt-4">
+    <%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-outline-info mr-2', role: 'button' %>
     <%= form.submit t('.button_next'), class: 'btn btn-outline-success' %>
   </div>
 <% end %>

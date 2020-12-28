@@ -10,6 +10,9 @@
     <div class="collapse navbar-collapse" id="navbarToggler">
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
         <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <li class="nav-item"><%= link_to t('nav.gists'), admin_gists_path, class: 'nav-link mr-2' %></li>
+          <% end %>
           <li class="nav-item"><span class="nav-link"><%= t('nav.welcome', email: current_user.email).html_safe %></span></li>
           <li class="nav-item"><%= link_to t('nav.profile'), edit_user_registration_path, class: 'nav-link mr-2' %></li>
           <li class="nav-item"><%= link_to t('nav.logout'), destroy_user_session_path, method: :delete, class: 'btn btn-outline-info', role: 'button' %></li>

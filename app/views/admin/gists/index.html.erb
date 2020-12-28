@@ -1,0 +1,15 @@
+<h2><%= t('.header') %></h2>
+
+<table class="table table-striped mt-4">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col"><%= t('.question') %></th>
+      <th scope="col"><%= t('.gist_url') %></th>
+      <th scope="col"><%= t('.user') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @gists %>
+  </tbody>
+</table>
