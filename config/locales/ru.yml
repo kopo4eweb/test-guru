@@ -65,6 +65,10 @@ ru:
       success: "Тест успешно пройден с"
       failed: "Тест провален с"
       button_back: "Назад к тестам"
+    gist:
+      success: "Gist успешно сохранен по %{url}"
+      address: "адресу"
+      failure: "Во время сохранения gist произошла ошибка"
 
   tests_mailer:
     completed_test:
@@ -158,8 +162,16 @@ ru:
         link_delete: "Удалить"
         confirm_delete: "Вы уверены?"
 
+    gists:
+      index:
+        header: "Гисты"
+        question: "Вопрос"
+        gist_url: "Гист"
+        user: "Пользователь"
+
   nav:
-    admin: 'Админка'
+    admin: "Админка"
+    gists: "Гисты"
     welcome: "Приветствую, <b>%{email}</b> Guru"
     profile: "Профиль"
     login: "Войти"
@@ -170,3 +182,8 @@ ru:
     descr: "Платформа для создания и прохождения тестов."
     school: "Учебный проект в онлайн-школе %{link}"
     author: "%{year}, Николенко Артем, %{link}"
+
+  api:
+    github:
+      gist:
+        descr: "Вопрос по <%{test}> из TestGuru"

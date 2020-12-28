@@ -12,6 +12,8 @@ class User < ApplicationRecord
 
   has_many :created_tests, class_name: 'Test'
 
+  has_many :gists
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true

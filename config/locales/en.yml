@@ -63,6 +63,10 @@ en:
       success: "Test passed successfully with"
       failed: "Test failed with"
       button_back: "Back to tests"
+    gist:
+      success: "Gist was successfully created to a %{url}"
+      url: "address"
+      failure: "An error occurred while saving gist"
 
   tests_mailer:
     completed_test:
@@ -156,8 +160,16 @@ en:
         link_delete: "Delete"
         confirm_delete: "Are you sure?"
 
+    gists:
+      index:
+        header: "Gists"
+        question: "Question"
+        gist_url: "Gist"
+        user: "User"
+
   nav:
-    admin: 'Admin panel'
+    admin: "Admin panel"
+    gists: "Gists"
     welcome: "Welcome, <b>%{email}</b> Guru"
     profile: "Profile"
     login: "Login"
@@ -168,3 +180,8 @@ en:
     descr: "A platform for creating and passing tests."
     school: "Educational project in the online school %{link}"
     author: "%{year}, Nikolenko Artem, %{link}"
+
+  api:
+    github:
+      gist:
+        descr: "A question about <%{test}> from TestGuru"

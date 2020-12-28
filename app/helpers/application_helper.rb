@@ -20,7 +20,7 @@ module ApplicationHelper
     
     flash.each do |key, message|
       alert_class = ALERTS[key.to_sym] || 'alert-info'
-      messages += content_tag :div, message, class: ['alert', alert_class], role: 'alert'
+      messages += content_tag :div, message.html_safe, class: ['alert', alert_class], role: 'alert'
     end
 
     messages.html_safe
