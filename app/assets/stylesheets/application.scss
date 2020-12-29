@@ -13,3 +13,48 @@
   border-color:rgba(218, 32, 32, 0.65);
   box-shadow: 0 0 0.1rem 0.2rem rgba(218, 32, 32, 0.65);
 }
+
+// icons
+
+.octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
+
+// global
+
+.pointer {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+// registration
+
+.group-password-confirmation {
+  position: relative;
+
+  .password-confirmation {
+    position: relative;
+    z-index: 0;
+    padding-right: 40px;
+  }
+
+  .octicon {
+    position: absolute;
+    right: 7px;
+    bottom: 7px;
+    z-index: 1;
+  }
+
+  .password-fail {
+    fill: red;
+  }
+
+  .password-success {
+    fill: green;
+  }
+}

@@ -27,12 +27,14 @@
             <% if @minimum_password_length %>
             <em><%= t('.min_password', length: @minimum_password_length) %></em>
             <% end %>
-            <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+            <%= f.password_field :password, autocomplete: "new-password", class: 'form-control password' %>
           </div>
 
-          <div class="form-group">
+          <div class="form-group group-password-confirmation">
             <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control password-confirmation' %>
+            <%= octicon "x-circle", height: 24, class: 'password-fail hide' %>
+            <%= octicon "check-circle", height: 24, class: 'password-success hide' %>
           </div>
 
           <%= f.submit t('.submit'), class: 'btn btn-primary' %>
