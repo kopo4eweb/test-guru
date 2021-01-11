@@ -23,14 +23,17 @@ function comparePasswords(e) {
         pwdCmf = passwordConfirmationField.value
   }
 
-  if (pwdCmf != '' && pwd != pwdCmf) {
+  if (pwd == '' || pwdCmf == '') {
+    groupPasswordConfirmation.querySelector('.password-success').classList.add('hide')
+    groupPasswordConfirmation.querySelector('.password-fail').classList.add('hide')
+    return
+  }
+
+  if (pwd != pwdCmf) {
     groupPasswordConfirmation.querySelector('.password-fail').classList.remove('hide')
     groupPasswordConfirmation.querySelector('.password-success').classList.add('hide')
-  } else if (pwdCmf != '') {
+  } else {
     groupPasswordConfirmation.querySelector('.password-success').classList.remove('hide')
     groupPasswordConfirmation.querySelector('.password-fail').classList.add('hide')
-  } else if (pwdCmf == '') {
-    groupPasswordConfirmation.querySelector('.password-success').classList.add('hide')
-    groupPasswordConfirmation.querySelector('.password-fail').classList.add('hide')
-  } 
+  }
 }
