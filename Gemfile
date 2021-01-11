@@ -40,6 +40,7 @@ gem 'rails-i18n', '~> 5.0'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.5.3'
 gem 'mini_racer', platforms: :ruby
+gem 'octicons_helper'
 
 gem "octokit", "~> 4.0"
 
