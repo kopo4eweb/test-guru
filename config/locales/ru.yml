@@ -60,6 +60,7 @@ ru:
     show:
       header: "Пройти тест %{title}"
       button_next: "Дальше"
+      gist_question: "Не понятен вопрос"
     result:
       header: "Тест %{title} успешно завершен!"
       success: "Тест успешно пройден с"
@@ -111,8 +112,13 @@ ru:
       test:
         link_show: "Детальная"
         link_edit: "Редактировать"
+        link_cancel: "Отменить"
         link_delete: "Удалить"
         confirm_delete: "Вы уверены?"
+      form_inline:
+        submit: "Ok"
+      update_inline:
+        success: "Название теста обновлено"
 
     questions:
       new:

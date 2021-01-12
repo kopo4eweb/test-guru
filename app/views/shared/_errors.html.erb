@@ -1,5 +1,5 @@
-<% if resource.errors.present? %>
-  <div class="alert alert-danger" role="alert" id="error_explanation">
+<% if resource.present? && resource.errors.present? %>
+  <div class="resource-errors alert alert-danger" role="alert" id="error_explanation" data-test-id='<%= resource.id %>'>
     <h5 class="alert-heading">
       <%= t('.header', count: resource.errors.count) %>
     </h5>

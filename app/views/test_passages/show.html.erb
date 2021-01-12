@@ -1,6 +1,19 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<p><%= @test_passage.passed_questions %> \ <%= @test_passage.total_questions %></p>
+<p>
+  <%= content_tag :span, 
+                  @test_passage.passed_questions,
+                  class: 'passed-questions',
+                  data: { passed_questions: @test_passage.passed_questions } %> 
+  \ <%= content_tag :span,
+                    @test_passage.total_questions,
+                    class: 'total-questions',
+                    data: { total_questions: @test_passage.total_questions } %> 
+</p>
+
+<div class="progress mb-4">
+  <div class="progress-bar bg-info progress-test-passage" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
 
 <p><b><%= @test_passage.current_question.body %></b></p>
 
