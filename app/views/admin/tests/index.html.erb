@@ -2,6 +2,8 @@
 
 <p><%= link_to t('.link_add'), new_admin_test_path, class: 'btn btn-primary', role: 'button' %></p>
 
+<%= render 'shared/errors', resource: @test %>
+
 <table class="table table-striped mt-4">
   <thead class="thead-light">
     <tr>

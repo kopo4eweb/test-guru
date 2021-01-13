@@ -58,6 +58,7 @@ en:
     show:
       header: "Pass the %{title} Test"
       button_next: "Next"
+      gist_question: "The question is not clear"
     result:
       header: "The %{title} Test was completed!"
       success: "Test passed successfully with"
@@ -109,8 +110,13 @@ en:
       test:
         link_show: "Show"
         link_edit: "Edit"
+        link_cancel: "Cancel"
         link_delete: "Delete"
         confirm_delete: "Are you sure?"
+      form_inline:
+        submit: "Ok"
+      update_inline:
+        success: "Test title updated"
 
     questions:
       new:
