@@ -12,36 +12,3 @@ categories = Category.create([
   {title: 'Rails'},
   {title: 'JavaScript'}
   ])
-
-users = User.create([
-  {name: 'John Doe', email: 'john_doe@mail.com'},
-  {name: 'James Bond', email: 'james_007@mail.com'},
-  {name: 'Admin', email: 'admin@testguru.com'}
-  ])
-
-admin = users[2]
-
-tests = Test.create([
-  {title: 'Основы HTML', level: 0, category: categories[0], author: admin},
-  {title: 'Основы HTML 5', level: 0, category: categories[0], author: admin},
-  {title: 'Основы Ruby', level: 2, category: categories[1], author: admin},
-  {title: 'Продвинутый Ruby', level: 3, category: categories[1], author: admin},
-  {title: 'Основы Rails', level: 7, category: categories[2], author: admin},
-  {title: 'Основы JS', level: 5, category: categories[3], author: admin},
-  ])
-
-questions = Question.create([
-  {body:'Что такое HTML?', test: tests[0]},
-  {body:'Что делает тег <br>?', test: tests[0]},
-  {body:'Как объявляется глобальная переменная?', test: tests[1]},
-  {body:'Как подмешать модуль в класс?', test: tests[2]},
-  {body:'Какая команда генерирует каркас приложения?', test: tests[3]},
-  {body:'Как правльно обявить переменную?', test: tests[5]},
-])
-
-answers = Answer.create([
-  {title: 'Язык стилизации элементов на странице', correct: false, question: questions[0]},
-  {title: 'Язык гипертекстовой разметки', correct: true, question: questions[0]},
-  {title: 'Рисует горизонтальную линию', correct: false, question: questions[1]},
-  {title: 'Перенос строки', correct: true, question: questions[1]},
-])
