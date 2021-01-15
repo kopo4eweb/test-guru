@@ -71,6 +71,16 @@ ru:
       address: "адресу"
       failure: "Во время сохранения gist произошла ошибка"
 
+  pages:
+    feedback:
+      header: "Обратная связь"
+      form:
+        email: "Адрес электронной почты для ответа"
+        message: "Сообщение"
+        button: "Отправить"
+    send_feedback:
+      success: "Ваше сообщение отправлено!"
+
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
@@ -188,8 +198,13 @@ ru:
     descr: "Платформа для создания и прохождения тестов."
     school: "Учебный проект в онлайн-школе %{link}"
     author: "%{year}, Николенко Артем, %{link}"
+    feedback: "Обратная связь"
 
   api:
     github:
       gist:
         descr: "Вопрос по <%{test}> из TestGuru"
+
+  mailer:
+    feedback:
+      subject: "Сообщение с сайта"

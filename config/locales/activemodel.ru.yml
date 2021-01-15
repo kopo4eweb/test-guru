@@ -1,0 +1,14 @@
+ru:
+  activemodel:
+    models:
+      feedback: "Обратная связь"
+
+    attributes:
+      feedback:
+        email: "Электронная почта:"
+        message: "Сообщение:"
+
+    errors:
+      messages:
+        blank: "не может быть пустым"
+        email_not_valid: "неверный формат"

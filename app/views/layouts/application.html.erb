@@ -25,9 +25,16 @@
     <footer class="mt-5">
       <hr>
       <div class="container">
-        <p><%= t('footer.descr') %></p>
-        <p><%= t('footer.school', link: link_to('Thinknetica', 'https://thinknetica.com/', target: '_blank')).html_safe %></p>
-        <p><%= t('footer.author', year: year, link: github_url('kopo4eweb', 'test-guru')).html_safe %></p>
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <p><%= t('footer.descr') %></p>
+            <p><%= t('footer.school', link: link_to('Thinknetica', 'https://thinknetica.com/', target: '_blank')).html_safe %></p>
+            <p><%= t('footer.author', year: year, link: github_url('kopo4eweb', 'test-guru')).html_safe %></p>
+          </div>
+          <div class="col-12 col-md-6">
+            <p><%= link_to t('footer.feedback'), feedback_path %></p>
+          </div>
+        </div>
       </div>
     </footer>    
   </body>
