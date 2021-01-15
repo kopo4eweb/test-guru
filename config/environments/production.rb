@@ -67,12 +67,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'test-guru-kopo4eweb.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :user_name            => ENV['SMTP_USERNAME'],
-    :password             => ENV['SMTP_PASSWORD'],
-    :authentication       => "plain",
-    :enable_starttls_auto => true
+    :user_name =>       ENV['SMTP_USERNAME'],
+    :password =>        ENV['SMTP_PASSWORD'],
+    :address =>         'smtp.mailtrap.io',
+    :domain =>          'smtp.mailtrap.io',
+    :port =>            '2525',
+    :authentication =>  :cram_md5
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.
