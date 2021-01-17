@@ -22,7 +22,7 @@ class GistQuestionService
   def gits_params
     {
       accept: 'application/vnd.github.v3+json',
-      public: false,
+      public: true,
       description: I18n.t('api.github.gist.descr', test: @test.title),
       files: {
         'test_guru_question.txt': {

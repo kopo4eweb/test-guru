@@ -1,11 +1,16 @@
 class Test < ApplicationRecord
   belongs_to :category
-  has_many :questions
+  has_many :questions, dependent: :destroy
 
-  has_many :test_passages
+  has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages
 
   belongs_to :author, class_name: "User", foreign_key: "user_id"
+
+  scope :ready, -> do 
+    where(public: true)
+    .order(updated_at: :ASC)
+  end
 
   scope :level_plain, -> { where(level: 0..1) }
   scope :level_middle, -> { where(level: 2..4) }

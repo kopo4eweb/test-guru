@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'feedback', to: 'pages#feedback'
+  post 'feedback', to: 'pages#send_feedback'
+
   namespace :admin do
     resources :tests do
       patch :update_inline, on: :member

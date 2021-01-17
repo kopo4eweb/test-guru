@@ -40,6 +40,9 @@ en:
       advanced: "advanced"
       hard: "hard"
       hero: "hero"
+    publics:
+      published: "Published"
+      not_published: "Not published"
     question:
       create: "Create New <%{title}> Question"
       edit: "Edit <%{title}> Question"
@@ -68,6 +71,16 @@ en:
       success: "Gist was successfully created to a %{url}"
       url: "address"
       failure: "An error occurred while saving gist"
+
+  pages:
+    feedback:
+      header: "Feedback"
+      form:
+        email: "Email for answer"
+        message: "Message"
+        button: "Send"
+    send_feedback:
+      success: "Your message has been sent!"
 
   tests_mailer:
     completed_test:
@@ -103,6 +116,7 @@ en:
       index:
         header: "Tricky Tests"
         title: "Title"
+        public: "Public"
         level: "Level"
         questions: "Questions"
         actions: "Actions"
@@ -186,8 +200,13 @@ en:
     descr: "A platform for creating and passing tests."
     school: "Educational project in the online school %{link}"
     author: "%{year}, Nikolenko Artem, %{link}"
+    feedback: "Feedback"
 
   api:
     github:
       gist:
         descr: "A question about <%{test}> from TestGuru"
+
+  mailer:
+    feedback:
+      subject: "Message from the site"

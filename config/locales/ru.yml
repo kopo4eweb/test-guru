@@ -42,6 +42,9 @@ ru:
       advanced: "продвинутый"
       hard: "тяжелый"
       hero: "геройский"
+    publics:
+      published: "Опубликовано"
+      not_published: "Не опубликовано"
     question:
       create: "Создать новый <%{title}> Вопрос"
       edit: "Редактировать <%{title}> Вопрос"
@@ -70,6 +73,16 @@ ru:
       success: "Gist успешно сохранен по %{url}"
       address: "адресу"
       failure: "Во время сохранения gist произошла ошибка"
+
+  pages:
+    feedback:
+      header: "Обратная связь"
+      form:
+        email: "Адрес электронной почты для ответа"
+        message: "Сообщение"
+        button: "Отправить"
+    send_feedback:
+      success: "Ваше сообщение отправлено!"
 
   tests_mailer:
     completed_test:
@@ -105,6 +118,7 @@ ru:
       index:
         header: "Доступные тесты"
         title: "Название"
+        public: "Опубликовано"
         level: "Уровень"
         questions: "Вопросы"
         actions: "Действия"
@@ -188,8 +202,13 @@ ru:
     descr: "Платформа для создания и прохождения тестов."
     school: "Учебный проект в онлайн-школе %{link}"
     author: "%{year}, Николенко Артем, %{link}"
+    feedback: "Обратная связь"
 
   api:
     github:
       gist:
         descr: "Вопрос по <%{test}> из TestGuru"
+
+  mailer:
+    feedback:
+      subject: "Сообщение с сайта"

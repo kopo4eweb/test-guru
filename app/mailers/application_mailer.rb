@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "TestGuru <mail@testguru.com>"
+  default from: "mail@test-guru-kopo4eweb.herokuapp.com"
   layout 'mailer'
 end

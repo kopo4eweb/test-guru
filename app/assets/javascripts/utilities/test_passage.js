@@ -6,7 +6,7 @@ document.addEventListener('turbolinks:load', function() {
     var totalQuestions = parseInt(document.querySelector('.total-questions').dataset.totalQuestions)
 
     var part = 100 / totalQuestions
-    var progressPassed = part * passedQuestions
+    var progressPassed = part * (passedQuestions - 1)
 
     progressTestPassage.style.width = progressPassed + '%'
   }

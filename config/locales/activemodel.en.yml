@@ -1,0 +1,14 @@
+en:
+  activemodel:
+    models:
+      feedback: "Feedback"
+
+    attributes:
+      feedback:
+        email: "Email:"
+        message: "Message:"
+
+    errors:
+      messages:
+        blank: "can't be blank"
+        email_not_valid: "wrong format"
