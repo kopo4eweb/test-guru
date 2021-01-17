@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 2021_01_17_123312) do
     t.bigint "user_id"
     t.boolean "public", default: false
     t.index ["category_id"], name: "index_tests_on_category_id"
-    t.index ["public"], name: "index_tests_on_public"
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
     t.index ["user_id"], name: "index_tests_on_user_id"
   end
