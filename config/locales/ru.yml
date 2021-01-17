@@ -42,6 +42,9 @@ ru:
       advanced: "продвинутый"
       hard: "тяжелый"
       hero: "геройский"
+    publics:
+      published: "Опубликовано"
+      not_published: "Не опубликовано"
     question:
       create: "Создать новый <%{title}> Вопрос"
       edit: "Редактировать <%{title}> Вопрос"
@@ -115,6 +118,7 @@ ru:
       index:
         header: "Доступные тесты"
         title: "Название"
+        public: "Опубликовано"
         level: "Уровень"
         questions: "Вопросы"
         actions: "Действия"

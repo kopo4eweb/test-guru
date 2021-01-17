@@ -13,6 +13,7 @@ ru:
         title: "Категория"
       test:
         title: "Название"
+        public: "Опубликовано"
         level: "Уровень"
         category_id: "Категория"
       question:

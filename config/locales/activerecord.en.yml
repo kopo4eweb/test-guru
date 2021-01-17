@@ -13,6 +13,7 @@ en:
         title: "Category"
       test:
         title: "Title"
+        public: "Published"
         level: "Level"
         category_id: "Category"
       question:

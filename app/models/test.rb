@@ -8,10 +8,7 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: "User", foreign_key: "user_id"
 
   scope :ready, -> do 
-    joins(:questions)
-    .select('tests.*, count(questions.*)')
-    .group('tests.id')
-    .having("count(questions.*) > ?", 0)
+    where(public: true)
     .order(updated_at: :ASC)
   end
 

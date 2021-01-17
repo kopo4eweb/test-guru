@@ -40,6 +40,9 @@ en:
       advanced: "advanced"
       hard: "hard"
       hero: "hero"
+    publics:
+      published: "Published"
+      not_published: "Not published"
     question:
       create: "Create New <%{title}> Question"
       edit: "Edit <%{title}> Question"
@@ -113,6 +116,7 @@ en:
       index:
         header: "Tricky Tests"
         title: "Title"
+        public: "Public"
         level: "Level"
         questions: "Questions"
         actions: "Actions"
