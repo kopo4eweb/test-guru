@@ -47,6 +47,12 @@ en:
       create: "Create New <%{title}> Question"
       edit: "Edit <%{title}> Question"
 
+  badges:
+    all:
+      header: "List badges"
+    user:
+      header: "My badges"
+
   tests:
     index:
       header: "Tricky Tests"
@@ -91,6 +97,32 @@ en:
     base:
       admin_required:
         alert: "You are not authorized to view this page."
+
+    badges:
+      index:
+        header: "List badges"
+        title: "Title"
+        url: "Images"
+        actions: "Actions"
+        link_add: "Add badge"
+      badge:
+        link_edit: "Edit"
+        link_delete: "Delete"
+        confirm_delete: "Are you sure?"
+      new:
+        header: "Create new badge"
+        link_back: "Back"
+      create:
+        success: "Badge was succeseefully created."
+      edit:
+        header: "Edit badge"
+        link_back: "Back"
+      update:
+        success: "Badge was succeseefully updated."
+      destroy:
+        success: "Badge %{title} was succeseefully deleted."
+      form:
+        notice: "An absolute path must be specified for an external resource"
 
     tests:
       new:
@@ -189,8 +221,13 @@ en:
 
   nav:
     admin: "Admin panel"
+    badges: "Badges"
+    badges_all: "All badges"
+    badges_user: "My badges"
     gists: "Gists"
-    welcome: "Welcome, <b>%{email}</b> Guru"
+    tests: "Tests"
+    welcome: "Welcome, <b>%{user}</b> Guru"
+    welcome_admin: "Welcome, <b>%{user}</b>"
     profile: "Profile"
     login: "Login"
     logout: "Logout"

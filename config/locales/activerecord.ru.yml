@@ -5,6 +5,7 @@ ru:
       test: "Тест"
       question: "Вопрос"
       answer: "Ответ"
+      badge: "Значок"
       user: "Пользователь"
       admin: "Администратор"
 
@@ -21,6 +22,9 @@ ru:
       answer:
         title: "Ответ"
         correct: "Правильный"
+      badge:
+        title: "Название"
+        url: "Путь к изображению значка"
       user:
         email: "Электронная почта"
         password: "Пароль"

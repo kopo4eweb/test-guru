@@ -1,0 +1,23 @@
+<tr scope="row">
+  <td class='align-middle'><%= badge.id %></td>
+  <td class='align-middle title'>
+    <%= content_tag :span, badge.title, class: 'badge-title', data: { badge_id: badge.id } %>
+  <td class='align-middle'>
+    <%= image_tag badge.url, class: "badge-img-sm" %>
+    <p><%= badge.url %></p>
+    </td>
+  <td class='align-middle'>
+    <%= link_to t('.link_edit'), 
+                edit_admin_badge_path(badge),
+                class: 'btn btn-outline-secondary btn-sm', 
+                role: 'button' %>
+    </td>
+  <td class='align-middle'>
+    <%= link_to t('.link_delete'), 
+                admin_badge_path(badge),
+                method: 'delete',
+                data: { confirm: t('.confirm_delete') },
+                class: 'btn btn-outline-danger btn-sm',
+                role: 'button' %>
+  </td>
+</tr>

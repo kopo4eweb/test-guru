@@ -5,6 +5,7 @@ en:
       test: "Test"
       question: "Question"
       answer: "Answer"
+      badge: "Badge"
       user: "User"
       admin: "Admin"
 
@@ -21,6 +22,9 @@ en:
       answer:
         title: "Answer"
         correct: "Valid"
+      badge:
+        title: "Title"
+        url: "Path to a badge image"
       user:
         email: "Email"
         password: "Password"
