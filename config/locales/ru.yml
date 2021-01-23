@@ -59,6 +59,7 @@ ru:
     index:
       header: "Доступные тесты"
       title: "Название"
+      category: "Категория"
       level: "Уровень"
       questions: "Вопросы"
       actions: "Действия"
@@ -104,6 +105,8 @@ ru:
       index:
         header: "Доступные значки"
         title: "Название"
+        active: "Активно"
+        usage_limit: "Лимит использований"
         url: "Изображение"
         actions: "Действия"
         link_add: "Добавить значок"
@@ -111,11 +114,13 @@ ru:
         link_edit: "Редактировать"
         link_delete: "Удалить"
         confirm_delete: "Вы уверены?"
+        active_yes: "Да"
+        active_no: "Нет"
       new:
         header: "Создать новый значок"
         link_back: "Назад"
       create:
-        success: "Тест успешно создан."
+        success: "Значок успешно создан."
       edit:
         header: "Редактировать значок"
         link_back: "Назад"
@@ -124,7 +129,9 @@ ru:
       destroy:
         success: "Значок %{title} успешно удален."
       form:
-        notice: "Для внешнего ресурса нужно указать абсолютный путь"
+        notice_usage_limit: "Сколько раз может применяться этот значок 1 пользователю"
+        notice_url: "Для внешнего ресурса нужно указать абсолютный путь"
+        notice_rule: "Как правильно писать правлила смотрите справа/внизу"
 
     tests:
       new:
@@ -150,6 +157,7 @@ ru:
       index:
         header: "Доступные тесты"
         title: "Название"
+        category: "Категория"
         public: "Опубликовано"
         level: "Уровень"
         questions: "Вопросы"

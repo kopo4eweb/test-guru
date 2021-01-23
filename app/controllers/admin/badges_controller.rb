@@ -2,7 +2,7 @@ class Admin::BadgesController < Admin::BaseController
   before_action :set_badge, only: %i[edit update destroy]
 
   def index
-    @badges = Badge.all
+    @badges = Badge.sort_updated_at_desc
   end
   
   def show; end
@@ -43,6 +43,6 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def badge_params
-    params.require(:badge).permit(:title, :url)
+    params.require(:badge).permit(:title, :active, :url, :usage_limit, :rule)
   end
 end

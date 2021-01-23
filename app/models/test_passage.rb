@@ -16,8 +16,12 @@ class TestPassage < ApplicationRecord
     if correct_answer?(answer_ids)
       self.correct_questions += 1
     end
+    
+    self.percent = percent_success_answer
 
     save!
+
+    add_badges if completed? && success?
   end
 
   def percent_success_answer
@@ -56,5 +60,25 @@ class TestPassage < ApplicationRecord
 
   def before_update_next_question
     self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+  end
+
+  def add_badges
+    badge_group_counts = Badge.user_group_badges_count(self.user)
+
+    Badge.show_active.each do |badge|
+
+      next if skip_add_badge?(badge, badge_group_counts)
+
+      if Rules::BadgeRules.new(self, badge.rule).call
+        self.user.user_badges.new(badge: badge, test_passage: self.test).save!
+      end
+    end
+  end
+
+  def skip_add_badge?(badge, badge_group_counts)
+    # если такой бейдж назначен за этот тест, пропусткаем, не назначаем
+    # or
+    # Если лимит позволяет использовать этот бейдж у этого пользователя, есть бейджи которые пользователь может получить только 1 раз
+    self.user.user_badges.where(badge: badge, test_passage: self.test.id).size > 0 || badge.usage_limit <= badge_group_counts[badge.id].to_i
   end
 end

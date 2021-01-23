@@ -2,6 +2,8 @@
   <td class='align-middle'><%= badge.id %></td>
   <td class='align-middle title'>
     <%= content_tag :span, badge.title, class: 'badge-title', data: { badge_id: badge.id } %>
+  <td class='align-middle'><%= badge.active ? t('.active_yes') : t('.active_no') %></td>
+  <td class='align-middle'><%= badge.usage_limit %></td>
   <td class='align-middle'>
     <%= image_tag badge.url, class: "badge-img-sm" %>
     <p><%= badge.url %></p>

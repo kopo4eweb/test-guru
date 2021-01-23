@@ -11,4 +11,8 @@ module TestsHelper
     return I18n.t('.helpers.publics.published') if test.public
     I18n.t('.helpers.publics.not_published')
   end
+
+  def test_category(test)
+    "#{test.category.title} (#{test.category.id})"
+  end
 end

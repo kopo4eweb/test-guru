@@ -9,9 +9,26 @@
       </div>
 
       <div class="form-group">
+        <%= form.check_box :active %>
+        <%= form.label :active %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :usage_limit %>
+        <%= form.number_field :usage_limit, in: 1..1000000, class: 'form-control' %>
+        <small class="form-text text-muted"><%= t('.notice_usage_limit') %></small>
+      </div>
+
+      <div class="form-group">
         <%= form.label :url %>
         <%= form.text_field :url, class: 'form-control' %>
-        <small class="form-text text-muted"><%= t('.notice') %></small>
+        <small class="form-text text-muted"><%= t('.notice_url') %></small>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :rule %>
+        <%= form.text_area :rule, rows: 5, cols: 70, class: 'form-control' %>
+        <small class="form-text text-muted"><%= t('.notice_rule') %></small>
       </div>
 
       <%= form.submit class: 'btn btn-primary' %>

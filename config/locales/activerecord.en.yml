@@ -24,7 +24,10 @@ en:
         correct: "Valid"
       badge:
         title: "Title"
+        active: "Activate"
+        usage_limit: "Usage limit"
         url: "Path to a badge image"
+        rule: "Rule"
       user:
         email: "Email"
         password: "Password"

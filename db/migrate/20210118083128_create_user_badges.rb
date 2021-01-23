@@ -3,6 +3,7 @@ class CreateUserBadges < ActiveRecord::Migration[5.2]
     create_table :user_badges do |t|
       t.references :user, foreign_key: true
       t.references :badge, foreign_key: true
+      t.references :test_passage, foreign_key: { to_table: :tests }
 
       t.timestamps
     end

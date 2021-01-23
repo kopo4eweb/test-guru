@@ -57,6 +57,7 @@ en:
     index:
       header: "Tricky Tests"
       title: "Title"
+      category: "Category"
       level: "Level"
       questions: "Questions"
       actions: "Actions"
@@ -102,6 +103,8 @@ en:
       index:
         header: "List badges"
         title: "Title"
+        active: "Actively"
+        usage_limit: "Usage limit"
         url: "Images"
         actions: "Actions"
         link_add: "Add badge"
@@ -109,6 +112,8 @@ en:
         link_edit: "Edit"
         link_delete: "Delete"
         confirm_delete: "Are you sure?"
+        active_yes: "Yes"
+        active_no: "No"
       new:
         header: "Create new badge"
         link_back: "Back"
@@ -122,7 +127,9 @@ en:
       destroy:
         success: "Badge %{title} was succeseefully deleted."
       form:
-        notice: "An absolute path must be specified for an external resource"
+        notice_usage_limit: "How many times can this icon be applied to 1 user"
+        notice_url: "An absolute path must be specified for an external resource"
+        notice_rule: "How to write the rules correctly see right/below"
 
     tests:
       new:
@@ -148,6 +155,7 @@ en:
       index:
         header: "Tricky Tests"
         title: "Title"
+        category: "Category"
         public: "Public"
         level: "Level"
         questions: "Questions"
