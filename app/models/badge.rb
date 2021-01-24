@@ -7,7 +7,7 @@ class Badge < ApplicationRecord
 
   validates :title, :url, presence: true
 
-  validates :usage_limit, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
+  validates :usage_limit, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 1000000 }
 
   def self.user_group_badges_count(user)
     user.user_badges.group(:badge_id).count

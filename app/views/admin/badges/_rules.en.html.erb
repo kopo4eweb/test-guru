@@ -1,1 +1,47 @@
-English
+<h4>How do I write rules?</h4>
+<p>The rules apply only to the current authorized user.</p>
+<p>The "Usage limit" field-determines how many times the current icon can be used by the user who passed the test.</p>
+
+<h5>Testing by tests</h5>
+<p><mark>Test</mark> - for the current test being passed, used with additional methods. "Usage limit" without restrictions.</p>
+<p><mark>Test(1)</mark> - for a test with id 1, used with additional methods. The" usage limit " is recommended to be set to 1.</p>
+<p><mark>Test(all)</mark> - it will work when the user passes all the published tests, for this rule, the "Usage limit" should be equal to 1 and without using additional methods.</p>
+
+<b>Additional methods for tests:</b>
+<p><mark>count</mark> - returns the number of attempts to pass the current test.</p>
+<p><mark>level</mark> - returns the level of the test being passed.</p>
+<p><mark>percent</mark> - returns with what percentage of correct answers this test was passed.</p>
+<p>The returned value must be compared with positive integers using signs: <mark>==</mark>, <mark>></mark>, <mark><</mark>, <mark>>=</mark>, <mark><=</mark>.<br>See below for how to use it.</p>
+
+<b>Examples of usage:</b>
+<p><mark>Test.count==1</mark> - it will work when the <u>current</u> test is passed on the first attempt.</p>
+<p><mark>Test.level==10</mark> - it will be triggered when the <u>current</u> test with level 10 is passed.</p>
+<p><mark>Test.percent>90</mark> - it will work when the <u>current</u> test is passed with more than 90% of the correct answers.</p>
+
+<p><mark>Test(1).count==1</mark> - it will work when the <u>test with id 1</u> is passed on the first attempt.</p>
+<p><mark>Test(1).level==10</mark> - it will work when the <u>test with id 1</u> and level 10 is passed.</p>
+<p><mark>Test(1).percent==100</mark> - it will work when the <u>test with id 1</u> is passed with 100% correct answers.</p>
+
+<p><mark>Test(all)</mark> - it will work when all published tests are passed.</p>
+
+<h5>Checking by category</h5>
+<p><u>The category has no additional methods!</u></p>
+<p><u>All categories must have a" Usage Limit " of 1!</u></p>
+<p><mark>Category</mark> - it will work when the user passes all published tests from the same category as the current passed test.</p>
+<p><mark>Category(2)</mark> - it will work when the user passes all published tests from <u>category c id 2</u>.</p>
+
+<h5>Combination</h5>
+<p>Tests, categories can be combined with each other in more complex rules, due to the use in the rules <mark>and</mark>, <mark>or</mark>.<br>Simple rules should be separated from each other by a sign <mark>;</mark> <br>See below for how to use it.</p>
+
+<b>Examples of usage:</b>
+<p><mark>Test.count==1<b>;</b> and<b>;</b> Test.percent==100</mark> - it will work when <u>the current</u> test is passed on the first attempt <u>AND</u> with 100% correct answers.</p>
+
+<p><mark>Test.count==1<b>;</b> or<b>;</b> Test.percent==100</mark> - it will work when <u>the current</u> test is passed on the first attempt <u>OR</u> with 100% correct answers.</p>
+
+<p><mark>Test.count==1<b>;</b> and<b>;</b> Test.percent==100;</b> and<b>;</b> Test.level==1</mark> - it will work when <u>the current</u> test is passed on the first attempt <u>AND</u> with 100% correct answers <u>AND</u> the test has a difficulty level of 1.</p>
+
+<p><mark>Test(4).percent>90<b>;</b> and<b>;</b> Test(3).percent>90</mark> - it will work when the <u>test with id 4 <b>AND</b> 3</u> is passed with more than 90% of the correct answers.</p>
+
+<p><mark>Category(1)<b>;</b> and<b>;</b> Category(2)</mark> - it will work when all published tests from the <u>categories with id 1 <b>AND</b> 2</u> are passed.</p>
+
+<p><mark>Test(1).level>10<b>;</b> and<b>;</b> Category(3)</mark> - triggered when <u>test with id 1</u> is passed <u>AND</u> all published tests from <u>categories with id 3</u> are passed</p>

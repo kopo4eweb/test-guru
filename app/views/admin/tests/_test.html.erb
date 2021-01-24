@@ -4,7 +4,7 @@
     <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
     <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
-  <td class='align-middle'><%= test_category(test) %></td>
+  <td class='align-middle'><%= test_category(test, true) %></td>
   <td class='align-middle'><%= test_public(test) %></td>
   <td class='align-middle'><%= test_level(test) %></td>
   <td class='align-middle'><%= test.questions.size %></td>

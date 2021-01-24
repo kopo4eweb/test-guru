@@ -7,16 +7,16 @@
 <table class="table table-striped mt-4">
   <thead class="thead-light">
     <tr>
-      <th scope="col">id</th>
-      <th scope="col" class="sort-by-title pointer">
+      <th class='align-middle' scope="col">id</th>
+      <th class='align-middle' scope="col" class="sort-by-title pointer">
         <%= t('.title') %>
         <%= octicon "arrow-up", class: "text-success hide" %>
         <%= octicon "arrow-down", class: "text-success hide" %>
       </th>
-      <th scope="col"><%= t('.active') %></th>
-      <th scope="col"><%= t('.usage_limit') %></th>
-      <th scope="col"><%= t('.url') %></th>
-      <th colspan="2" scope="col"><%= t('.actions') %></th>
+      <th class='align-middle' scope="col"><%= t('.active') %></th>
+      <th class='align-middle' scope="col"><%= raw t('.usage_limit') %></th>
+      <th class='align-middle' scope="col"><%= t('.url') %></th>
+      <th class='align-middle' colspan="2" scope="col"><%= t('.actions') %></th>
     </tr>
   </thead>
   <tbody>

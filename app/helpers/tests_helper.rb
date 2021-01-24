@@ -12,7 +12,8 @@ module TestsHelper
     I18n.t('.helpers.publics.not_published')
   end
 
-  def test_category(test)
-    "#{test.category.title} (#{test.category.id})"
+  def test_category(test, admin = false)
+    return "#{test.category.title} (#{test.category.id})" if admin
+    "#{test.category.title}"
   end
 end

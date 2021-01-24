@@ -104,7 +104,7 @@ en:
         header: "List badges"
         title: "Title"
         active: "Actively"
-        usage_limit: "Usage limit"
+        usage_limit: "Usage<br>limit"
         url: "Images"
         actions: "Actions"
         link_add: "Add badge"
@@ -127,7 +127,7 @@ en:
       destroy:
         success: "Badge %{title} was succeseefully deleted."
       form:
-        notice_usage_limit: "How many times can this icon be applied to 1 user"
+        notice_usage_limit: "How many times can this icon be applied to 1 user, min: 1, max: 1 000 000"
         notice_url: "An absolute path must be specified for an external resource"
         notice_rule: "How to write the rules correctly see right/below"
 

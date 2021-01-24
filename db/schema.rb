@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_01_21_103549) do
   create_table "badges", force: :cascade do |t|
     t.string "title", null: false
     t.string "url", null: false
-    t.integer "usage_limit", default: 1000000
+    t.integer "usage_limit", default: 1
     t.text "rule"
     t.boolean "active", default: false
     t.datetime "created_at", null: false
@@ -89,11 +89,11 @@ ActiveRecord::Schema.define(version: 2021_01_21_103549) do
   create_table "user_badges", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "badge_id"
-    t.bigint "test_passage_id"
+    t.bigint "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["badge_id"], name: "index_user_badges_on_badge_id"
-    t.index ["test_passage_id"], name: "index_user_badges_on_test_passage_id"
+    t.index ["test_id"], name: "index_user_badges_on_test_id"
     t.index ["user_id"], name: "index_user_badges_on_user_id"
   end
 
@@ -133,6 +133,6 @@ ActiveRecord::Schema.define(version: 2021_01_21_103549) do
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users"
   add_foreign_key "user_badges", "badges"
-  add_foreign_key "user_badges", "tests", column: "test_passage_id"
+  add_foreign_key "user_badges", "tests"
   add_foreign_key "user_badges", "users"
 end

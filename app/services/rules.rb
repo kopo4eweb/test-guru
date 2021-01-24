@@ -48,8 +48,8 @@ module Rules
   
     def get_rule(class_rule_str)
       self.send(self.class.class_eval("def define_rule; #{class_rule_str}; end"))
-    rescue StandardError
-      "false"
+    rescue StandardError => e
+      raise ScriptError, e, caller
     end
 
     def run_rule(completed_rule_str)
@@ -93,11 +93,11 @@ module Rules
       custom_code = ''
   
       if object.nil?      
-        custom_code += gen_function(nil)
+        custom_code += current_test
       else        
         case object
         when /\d+/
-          custom_code += gen_function(object)
+          custom_code += test_is_defined(object)
         when /all/
           custom_code += "Test.ready.count == user.test_passages.select('test_id').distinct.count;"
         else
@@ -110,18 +110,39 @@ module Rules
 
     private
     
-    def gen_function(id)
+    def test_is_defined(id)
       custom_code = ''
-  
-      condition_id = " and test.id == #{id}" unless id.nil?
-  
+
       case function
       when 'count'
-        custom_code += "test.test_passages.#{function} #{expression} #{value} #{condition_id};"
+        custom_code += "user.test_passages.where(test_id: #{id}).select('test_id').distinct.#{function} #{expression} #{value};"
       when 'level'
-        custom_code += "test.#{function} #{expression} #{value} #{condition_id};"
+        custom_code += "find_user_test = user.test_passages.where(test_id: #{id}).first; "
+        custom_code += "if find_user_test; "
+        custom_code += "find_user_test.test.#{function} #{expression} #{value}; "
+        custom_code += "else; false; end;"
       when 'percent'
-        custom_code += "test_passage.#{function} #{expression} #{value} #{condition_id};"
+        custom_code += "find_user_test = user.test_passages.where(test_id: #{id}); "
+        custom_code += "if find_user_test.size > 0; "
+        custom_code += "find_user_test.maximum(:#{function}) #{expression} #{value}; "
+        custom_code += "else; false; end;"
+      else
+        custom_code = 'false;'
+      end
+  
+      custom_code
+    end
+
+    def current_test
+      custom_code = ''
+
+      case function
+      when 'count'
+        custom_code += "test.test_passages.#{function} #{expression} #{value};"
+      when 'level'
+        custom_code += "test.#{function} #{expression} #{value};"
+      when 'percent'
+        custom_code += "test_passage.#{function} #{expression} #{value};"
       else
         custom_code = 'false;'
       end
@@ -134,7 +155,7 @@ module Rules
     end
   end
 
-  # constructor for filter Tests
+  # constructor for filter Category
   class CategoryRules
     REGEX_PARSE = /([category]+)(\()*([0-9]+)*(\))*/
 
@@ -149,8 +170,6 @@ module Rules
       parsing
   
       custom_code = ''
-      
-      pp object
 
       if object.nil?
         custom_code += "count_test_with_category = test.category.tests.ready.count; "
@@ -158,10 +177,11 @@ module Rules
         custom_code += "count_test_with_category == user.test_passages.where(test_id: tests_ids_in_category).select('test_id').distinct.count;"
       else
         if object =~ /\d+/
-          pp object
           custom_code += "count_test_with_category = Category.where(id: #{object}).first.tests.ready.count; "
+          custom_code += "if count_test_with_category > 0; "
           custom_code += "tests_ids_in_category = Category.where(id: #{object}).first.tests.ready.ids.sort; "
-          custom_code += "count_test_with_category == user.test_passages.where(test_id: tests_ids_in_category).select('test_id').distinct.count;"
+          custom_code += "count_test_with_category == user.test_passages.where(test_id: tests_ids_in_category).select('test_id').distinct.count; "
+          custom_code += "else; false; end; "
         else
           custom_code = 'false'
         end
