@@ -115,7 +115,7 @@ module Rules
 
       case function
       when 'count'
-        custom_code += "user.test_passages.where(test_id: #{id}).select('test_id').distinct.#{function} #{expression} #{value};"
+        custom_code += "user.test_passages.where(test_id: #{id}).#{function} #{expression} #{value};"
       when 'level'
         custom_code += "find_user_test = user.test_passages.where(test_id: #{id}).first; "
         custom_code += "if find_user_test; "
@@ -138,7 +138,7 @@ module Rules
 
       case function
       when 'count'
-        custom_code += "test.test_passages.#{function} #{expression} #{value};"
+        custom_code += "user.test_passages.where(test: test).#{function} #{expression} #{value};"
       when 'level'
         custom_code += "test.#{function} #{expression} #{value};"
       when 'percent'
