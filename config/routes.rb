@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get 'feedback', to: 'pages#feedback'
   post 'feedback', to: 'pages#send_feedback'
 
+  get 'badges', to: 'badges#all'
+  get 'badges_user', to: 'badges#user'
+
   namespace :admin do
     resources :tests do
       patch :update_inline, on: :member
@@ -30,5 +33,7 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: :index
+
+    resources :badges, except: :show
   end
 end

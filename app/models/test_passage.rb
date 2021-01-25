@@ -16,6 +16,8 @@ class TestPassage < ApplicationRecord
     if correct_answer?(answer_ids)
       self.correct_questions += 1
     end
+    
+    self.percent = percent_success_answer
 
     save!
   end
@@ -55,6 +57,6 @@ class TestPassage < ApplicationRecord
   end
 
   def before_update_next_question
-    self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+    self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first unless self.current_question.nil?
   end
 end

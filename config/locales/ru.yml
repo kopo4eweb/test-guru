@@ -49,10 +49,17 @@ ru:
       create: "Создать новый <%{title}> Вопрос"
       edit: "Редактировать <%{title}> Вопрос"
 
+  badges:
+    all:
+      header: "Доступные значки"
+    user:
+      header: "Мои значки"
+
   tests:
     index:
       header: "Доступные тесты"
       title: "Название"
+      category: "Категория"
       level: "Уровень"
       questions: "Вопросы"
       actions: "Действия"
@@ -65,7 +72,7 @@ ru:
       button_next: "Дальше"
       gist_question: "Не понятен вопрос"
     result:
-      header: "Тест %{title} успешно завершен!"
+      header: "Тест %{title} завершен!"
       success: "Тест успешно пройден с"
       failed: "Тест провален с"
       button_back: "Назад к тестам"
@@ -93,6 +100,38 @@ ru:
     base:
       admin_required:
         alert: "У вас нет прав для просмотра этой страницы."
+    
+    badges:
+      index:
+        header: "Доступные значки"
+        title: "Название"
+        active: "Активно"
+        usage_limit: "Лимит<br>использований"
+        url: "Изображение"
+        actions: "Действия"
+        link_add: "Добавить значок"
+      badge:
+        link_edit: "Редактировать"
+        link_delete: "Удалить"
+        confirm_delete: "Вы уверены?"
+        active_yes: "Да"
+        active_no: "Нет"
+      new:
+        header: "Создать новый значок"
+        link_back: "Назад"
+      create:
+        success: "Значок успешно создан."
+      edit:
+        header: "Редактировать значок"
+        link_back: "Назад"
+      update:
+        success: "Значок успешно обновлен."
+      destroy:
+        success: "Значок %{title} успешно удален."
+      form:
+        notice_usage_limit: "Сколько раз может применяться этот значок 1 пользователю, min: 1, max: 1 000 000"
+        notice_url: "Для внешнего ресурса нужно указать абсолютный путь"
+        notice_rule: "Как правильно писать правлила смотрите справа/внизу"
 
     tests:
       new:
@@ -118,6 +157,7 @@ ru:
       index:
         header: "Доступные тесты"
         title: "Название"
+        category: "Категория"
         public: "Опубликовано"
         level: "Уровень"
         questions: "Вопросы"
@@ -191,8 +231,13 @@ ru:
 
   nav:
     admin: "Админка"
+    badges: "Значки"
+    badges_all: "Все значки"
+    badges_user: "Мои значки"
     gists: "Гисты"
-    welcome: "Приветствую, <b>%{email}</b> Guru"
+    tests: "Тесты"
+    welcome: "Приветствую, <b>%{user}</b> Guru"
+    welcome_admin: "Приветствую, <b>%{user}</b>"
     profile: "Профиль"
     login: "Войти"
     logout: "Выйти"

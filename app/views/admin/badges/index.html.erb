@@ -1,0 +1,25 @@
+<h1 class="mb-4"><%= t('.header') %></h1>
+
+<p><%= link_to t('.link_add'), new_admin_badge_path, class: 'btn btn-primary', role: 'button' %></p>
+
+<%= render 'shared/errors', resource: @badge %>
+
+<table class="table table-striped mt-4">
+  <thead class="thead-light">
+    <tr>
+      <th class='align-middle' scope="col">id</th>
+      <th class='align-middle' scope="col" class="sort-by-title pointer">
+        <%= t('.title') %>
+        <%= octicon "arrow-up", class: "text-success hide" %>
+        <%= octicon "arrow-down", class: "text-success hide" %>
+      </th>
+      <th class='align-middle' scope="col"><%= t('.active') %></th>
+      <th class='align-middle' scope="col"><%= raw t('.usage_limit') %></th>
+      <th class='align-middle' scope="col"><%= t('.url') %></th>
+      <th class='align-middle' colspan="2" scope="col"><%= t('.actions') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @badges %>
+  </tbody>
+</table>
