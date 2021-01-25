@@ -2,7 +2,7 @@ module ManageBadge
 
   # constructor for filter Tests
   class TestRules < ApplicationService
-    REGEX_PARSE = /([test]+)(\()*([a-z0-9]+)*(\))*(\.)*([a-z]+)*(==|>|<)*([a-z0-9]+)*/
+    REGEX_PARSE = /([test]+)(\()*([a-z0-9]+)*(\))*(\.)*([a-z]+)*([=><]+)*([a-z0-9]+)*/
 
     attr_reader :rule
     attr_accessor :model, :object, :function, :expression, :value
