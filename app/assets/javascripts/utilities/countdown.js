@@ -20,7 +20,7 @@ function startCountDown(countdown) {
 
     if (countdownTime < 0) {
       clearInterval(timer);
-      window.location.href = `/test_passages/${testPassageId}/result`
+      window.location.href = '/test_passages/'+ testPassageId +'/result'
     } else {
       countdown.innerHTML = format_of_countdown(Math.trunc(hours), Math.trunc(minuts), seconds);
     }
@@ -32,5 +32,5 @@ function format_of_countdown(hours, minuts, seconds) {
   var str_minuts = minuts < 10 ? "0" + minuts : minuts
   var str_seconds = seconds < 10 ? "0" + seconds : seconds
 
-  return `${str_hours}:${str_minuts}:${str_seconds}`
+  return str_hours +':'+ str_minuts +':'+ str_seconds
 }
