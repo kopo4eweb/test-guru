@@ -52,6 +52,10 @@ class TestPassage < ApplicationRecord
     time_left_seconds.round
   end
 
+  def is_time_left?
+    time_left.positive?
+  end
+
   private
 
   def before_validation_set_first_question

@@ -1,7 +1,7 @@
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
 <div class="mt-4">
-  <% if @test_passage.success? %>
+  <% if @test_passage.success? && @test_passage.is_time_left? %>
     <span class='test-success'><%= t('.success') %> <b><%= @test_passage.percent_success_answer %>%</b></span>
     <div class="progress mt-2">
       <div class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: <%= @test_passage.percent_success_answer %>%" aria-valuenow="<%= @test_passage.percent_success_answer %>" aria-valuemin="0" aria-valuemax="100"></div>
