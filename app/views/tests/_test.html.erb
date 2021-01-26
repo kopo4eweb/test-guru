@@ -1,7 +1,13 @@
 <tr scope="row">
-  <td class='title'><%= test.title %></td>
-  <td><%= test_level(test) %></td>
-  <td><%= test_category(test) %></td>
-  <td><%= test.questions.size %></td>
-  <td><%= button_to t('.button_start'), start_test_path(test), class: 'btn btn-outline-primary' %></td>
+  <td class='align-middle title'><%= test.title %></td>
+  <td class='align-middle'>
+    <%= test_level(test) %>
+    <% if test.time_for_test > 0 %>
+      <br>
+      <%= content_tag(:span, test_time(test), class: 'badge badge-primary') %>
+    <% end %>
+  </td>
+  <td class='align-middle'><%= test_category(test) %></td>
+  <td class='align-middle'><%= test.questions.size %></td>
+  <td class='align-middle'><%= button_to t('.button_start'), start_test_path(test), class: 'btn btn-outline-primary' %></td>
 </tr>

@@ -32,4 +32,9 @@ class Test < ApplicationRecord
       .order(created_at: :desc)
       .pluck(:title)
   end
+
+  def get_time_in_minuts
+    return 0 unless time_for_test.positive?
+    time_for_test.to_i / 60 
+  end
 end

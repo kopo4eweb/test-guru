@@ -6,7 +6,13 @@
   </td>
   <td class='align-middle'><%= test_category(test, true) %></td>
   <td class='align-middle'><%= test_public(test) %></td>
-  <td class='align-middle'><%= test_level(test) %></td>
+  <td class='align-middle'>
+    <%= test_level(test) %>
+    <% if test.time_for_test > 0 %>
+      <br>
+      <%= content_tag(:span, test_time(test), class: 'badge badge-secondary') %>
+    <% end %>
+  </td>
   <td class='align-middle'><%= test.questions.size %></td>
   <td class='align-middle'><%= link_to t('.link_show'), admin_test_path(test), class: 'btn btn-outline-primary btn-sm', role: 'button' %></td>
   <td class='align-middle'>

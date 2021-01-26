@@ -15,6 +15,7 @@ ru:
       test:
         title: "Название"
         public: "Опубликовано"
+        time_for_test: "Время на прохождение теста в мин."
         level: "Уровень"
         category_id: "Категория"
       question:

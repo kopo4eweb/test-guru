@@ -2,6 +2,7 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passages, only: %i[show result update gist]
 
   def show
+    redirect_to result_test_passage_path(@test_passage) if @test_passage.current_question.nil?
   end
 
   def result

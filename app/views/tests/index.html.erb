@@ -3,15 +3,15 @@
 <table class="table mt-4">
   <thead class="thead-light">
     <tr>
-      <th scope="col" class="sort-by-title pointer">
+      <th class='align-middle' scope="col" class="sort-by-title pointer">
         <%= t('.title') %>
         <%= octicon "arrow-up", class: "text-success hide" %>
         <%= octicon "arrow-down", class: "text-success hide" %>
       </th>
-      <th scope="col"><%= t('.level') %></th>
-      <th scope="col"><%= t('.category') %></th>
-      <th scope="col"><%= t('.questions') %></th>
-      <th scope="col"><%= t('.actions') %></th>
+      <th class='align-middle' scope="col"><%= t('.level') %><br><%= t('.time_for_test') %></th>
+      <th class='align-middle' scope="col"><%= t('.category') %></th>
+      <th class='align-middle' scope="col"><%= t('.questions') %></th>
+      <th class='align-middle' scope="col"><%= t('.actions') %></th>
     </tr>
   </thead>
   <tbody>

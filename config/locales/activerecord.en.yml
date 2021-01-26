@@ -15,6 +15,7 @@ en:
       test:
         title: "Title"
         public: "Published"
+        time_for_test: "Time to complete the test in min."
         level: "Level"
         category_id: "Category"
       question:
