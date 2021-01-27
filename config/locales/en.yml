@@ -41,8 +41,9 @@ en:
       hard: "hard"
       hero: "hero"
     publics:
-      published: "Published"
-      not_published: "Not published"
+      published: "Yes"
+      not_published: "No"
+    time_for_test: "%{minutes} min."
     question:
       create: "Create New <%{title}> Question"
       edit: "Edit <%{title}> Question"
@@ -59,6 +60,7 @@ en:
       title: "Title"
       category: "Category"
       level: "Level"
+      time_for_test: "Time for the test"
       questions: "Questions"
       actions: "Actions"
     test:
@@ -69,6 +71,7 @@ en:
       header: "Pass the %{title} Test"
       button_next: "Next"
       gist_question: "The question is not clear"
+      time_left: "There is still time to complete the test:"
     result:
       header: "The %{title} Test was completed!"
       success: "Test passed successfully with"
@@ -145,6 +148,8 @@ en:
       show:
         title: "Title"
         level: "Level"
+        public: "Public"
+        time_for_test: "Time for the test"
         actions: "Actions"
         questions: "Questions"
         link_create: "Create question"
@@ -158,6 +163,7 @@ en:
         category: "Category"
         public: "Public"
         level: "Level"
+        time_for_test: "Time for the test"
         questions: "Questions"
         actions: "Actions"
         link_add: "Add test"
@@ -171,6 +177,8 @@ en:
         submit: "Ok"
       update_inline:
         success: "Test title updated"
+      form:
+        notice_time_for_test: "Leave zero for the test without taking into account the time."
 
     questions:
       new:

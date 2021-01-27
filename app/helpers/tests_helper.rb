@@ -16,4 +16,8 @@ module TestsHelper
     return "#{test.category.title} (#{test.category.id})" if admin
     "#{test.category.title}"
   end
+
+  def test_time(test)
+    "#{I18n.t('.helpers.time_for_test', minutes: test.get_time_in_minuts)}"
+  end
 end

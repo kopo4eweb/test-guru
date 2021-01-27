@@ -1,5 +1,12 @@
 <p class="h4 mb-2"><b><%= t('.title') %></b>: <%= @test.title %></p>
-<p class="h4"><b><%= t('.level') %></b>: <%= test_level(@test) %></p>
+<p class="h4 mb-2"><b><%= t('.level') %></b>: <%= test_level(@test) %></p>
+<p class="h4 mb-2"><b><%= t('.public') %></b>: <%= test_public(@test) %></p>
+<% if @test.time_for_test > 0 %>
+  <p class="h4"><b><%= t('.time_for_test') %></b>: <%= test_time(@test) %></p>
+<% end %>
+<div class="mt-3 mb-4">
+  <%= link_to t('.link_edit'), edit_admin_test_path(@test), class: 'btn btn-outline-secondary mr-2', role: 'button' %>
+</div>
 <hr>
 
 <h2 class="mb-4"><%= t('.questions') %>:</h2>
@@ -19,6 +26,5 @@
 
 <hr>
 <div class="mt-4">
-  <%= link_to t('.link_edit'), edit_admin_test_path(@test), class: 'btn btn-outline-secondary mr-2', role: 'button' %>
   <%= link_to t('.link_back'), admin_tests_path, class: 'btn btn-secondary', role: 'button' %>
 </div>

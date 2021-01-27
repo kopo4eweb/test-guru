@@ -1,7 +1,8 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passages, only: %i[show result update gist]
 
-  def show
+  def show    
+    redirect_to result_test_passage_path(@test_passage) if @test_passage.current_question.nil? || @test_passage.time_is_over?
   end
 
   def result
@@ -10,7 +11,7 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
 
-    if @test_passage.completed?
+    if @test_passage.completed? || @test_passage.time_is_over?
       TestsMailer.completed_test(@test_passage).deliver_now if @test_passage.success?
       
       ManageBadge::BadgeChecker.call(@test_passage) if @test_passage.success?

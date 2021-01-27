@@ -15,6 +15,13 @@
   <div class="progress-bar bg-info progress-test-passage" role="progressbar" style="width: 0%" aria-valuenow="<%= @test_passage.percent_success_answer %>" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
 
+<% if @test_passage.test.set_countdown? %>
+  <div class="h3 mb-4"> 
+    <%= t('.time_left') %>
+    <div class="countdown" data-time="<%= @test_passage.time_left %>"><%= format_of_countdown(@test_passage.time_left) %></div>
+  </div>
+<% end %>
+
 <p><b><%= @test_passage.current_question.body %></b></p>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
@@ -27,6 +34,6 @@
 
   <div class="mt-4">
     <%= link_to t('.gist_question'), gist_test_passage_path(@test_passage), method: :post, class: 'btn btn-outline-info mr-2', role: 'button' %>
-    <%= form.submit t('.button_next'), class: 'btn btn-outline-success' %>
+    <%= form.submit t('.button_next'), class: 'btn btn-outline-success awnswer_submit' %>
   </div>
 <% end %>

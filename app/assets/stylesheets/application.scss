@@ -68,3 +68,14 @@
 .badge-img-sm {
   max-width: 68px;
 }
+
+// countdown
+.countdown {
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  font-size: 2rem;
+  line-height: 1;
+  color:rgba(218, 32, 32, 1);
+  border: 1px solid rgb(82, 82, 82);
+  border-radius: 5px;
+}
