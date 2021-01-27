@@ -34,7 +34,12 @@ class Test < ApplicationRecord
   end
 
   def get_time_in_minuts
-    return 0 unless time_for_test.positive?
+    return 0 if time_for_test.zero?
+    
     time_for_test.to_i / 60 
+  end
+
+  def set_countdown?
+    time_for_test.positive?
   end
 end

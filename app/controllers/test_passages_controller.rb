@@ -1,8 +1,8 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passages, only: %i[show result update gist]
 
-  def show
-    redirect_to result_test_passage_path(@test_passage) if @test_passage.current_question.nil?
+  def show    
+    redirect_to result_test_passage_path(@test_passage) if @test_passage.current_question.nil? || @test_passage.time_is_over?
   end
 
   def result
@@ -16,6 +16,9 @@ class TestPassagesController < ApplicationController
       
       ManageBadge::BadgeChecker.call(@test_passage) if @test_passage.success?
 
+      redirect_to result_test_passage_path(@test_passage)
+
+    elsif @test_passage.time_is_over?
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

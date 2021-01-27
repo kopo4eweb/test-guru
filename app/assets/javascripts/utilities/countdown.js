@@ -8,21 +8,21 @@ document.addEventListener('turbolinks:load', function() {
 
 function startCountDown(countdown) {
   var countdownTime = countdown.dataset.time
-  var testPassageId = countdown.dataset.id
+  var awnswerSubmit = document.querySelector('.awnswer_submit')
 
   var timer = setInterval(function () {
 
-    --countdownTime;
+    --countdownTime
 
     var seconds = countdownTime % 60
     var minuts = countdownTime / 60 % 60
     var hours = countdownTime / 60 / 60 % 60
 
     if (countdownTime < 0) {
-      clearInterval(timer);
-      window.location.href = '/test_passages/'+ testPassageId +'/result'
+      clearInterval(timer)
+      awnswerSubmit.click()
     } else {
-      countdown.innerHTML = format_of_countdown(Math.trunc(hours), Math.trunc(minuts), seconds);
+      countdown.innerHTML = format_of_countdown(Math.trunc(hours), Math.trunc(minuts), seconds)
     }
   }, 1000)
 }

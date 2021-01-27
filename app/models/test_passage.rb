@@ -52,8 +52,11 @@ class TestPassage < ApplicationRecord
     time_left_seconds.round
   end
 
-  def is_time_left?
-    time_left.positive?
+  def time_is_over?
+    # for a test with not set countdown
+    return false unless test.set_countdown?
+
+    !time_left.positive?
   end
 
   private
